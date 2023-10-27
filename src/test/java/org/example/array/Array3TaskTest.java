@@ -36,4 +36,31 @@ class Array3TaskTest {
         assertArrayEquals(result, inputArray);
     }
 
+    @Test
+    public void test4() {
+        Array3Task array3Task = new Array3Task();
+        int[] inputArray = {1, 2, 3};
+        int[] result = {3, 1, 2};
+        array3Task.rotate2(inputArray, 1);
+        assertArrayEquals(result, inputArray);
+    }
+
+    @Test
+    public void test5() {
+        Array3Task array3Task = new Array3Task();
+        int[] inputArray = {1, 2, 3, 4, 5, 6};
+        int[] result = {5, 6, 1, 2, 3, 4};
+        array3Task.rotate2(inputArray, 2);
+        assertArrayEquals(result, inputArray);
+    }
+
+    @Test
+    public void test6() {
+        Array3Task array3Task = new Array3Task();
+        int[] inputArray = {1, 2, 3, 4, 5, 6};
+        int[] result = {3, 4, 5, 6, 1, 2};
+        array3Task.rotate2(inputArray, 4);
+        assertArrayEquals(result, inputArray);
+    }
+
 }
