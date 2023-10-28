@@ -63,4 +63,13 @@ class Array3TaskTest {
         assertArrayEquals(result, inputArray);
     }
 
+    @Test
+    public void test7() {
+        Array3Task array3Task = new Array3Task();
+        int[] inputArray = {1};
+        int[] result = {1};
+        array3Task.rotate2(inputArray, 0);
+        assertArrayEquals(result, inputArray);
+    }
+
 }
