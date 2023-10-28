@@ -26,4 +26,24 @@ class Array6TaskTest {
         assertArrayEquals(expected, result);
     }
 
+    @Test
+    public void test3() {
+        Array6Task array6Task = new Array6Task();
+        int[] inputArray1 = {1, 2, 2, 1};
+        int[] inputArray2 = {2, 2};
+        int[] result = array6Task.intersect2(inputArray1, inputArray2);
+        assertArrayEquals(inputArray2, result);
+    }
+
+
+    @Test
+    public void test4() {
+        Array6Task array6Task = new Array6Task();
+        int[] inputArray1 = {1, 2};
+        int[] inputArray2 = {1, 1};
+        int[] expected = {1};
+        int[] result = array6Task.intersect2(inputArray1, inputArray2);
+        assertArrayEquals(expected, result);
+    }
+
 }

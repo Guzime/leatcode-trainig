@@ -1,9 +1,6 @@
 package org.example.array;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Array6Task {
     /**
@@ -69,5 +66,33 @@ public class Array6Task {
             result[i] = intersectList.get(i);
         }
         return result;
+    }
+
+    public int[] intersect2(int[] nums1, int[] nums2) {
+        Map<Integer, Integer> dublicate = new HashMap<>();
+        int[] less = nums1.length < nums2.length ? nums1 : nums2;
+        int[] more = nums1.length < nums2.length ? nums2 : nums1;
+        int[] result = new int[less.length];
+
+        for (int i = 0; i < more.length; i++) {
+            if (dublicate.containsKey(more[i])) {
+                dublicate.put(more[i], dublicate.get(more[i]) + 1);
+            } else {
+                dublicate.put(more[i], 1);
+            }
+        }
+        int count = 0;
+        for (int i = 0; i < less.length; i++) {
+            if (dublicate.containsKey(less[i])) {
+                result[count] = less[i];
+                count++;
+                if (dublicate.get(less[i]) == 1) {
+                    dublicate.remove(less[i]);
+                } else {
+                    dublicate.put(less[i], dublicate.get(less[i]) - 1);
+                }
+            }
+        }
+        return Arrays.copyOfRange(result, 0, count);
     }
 }
