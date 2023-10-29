@@ -43,11 +43,9 @@ public class Array7Task {
                 digits[i] = 0;
             }
         }
-        if (digits[0] == 0) {
+
             int[] result = new int[digits.length + 1];
             result[0] = 1;
             return result;
-        }
-        return digits;
     }
 }
