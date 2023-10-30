@@ -15,12 +15,17 @@ public class LinkedList9Task {
      *
      */
     public void deleteNode(ListNode node) {
-        int deleteVal = node.val;
         ListNode nextNode = node.next;
         ListNode prevNode = node;
         while (nextNode != null) {
+            int buff = nextNode.val;
             nextNode.val = prevNode.val;
+            prevNode.val = buff;
             nextNode = nextNode.next;
+            if (nextNode == null) {
+                prevNode.next = null;
+                return;
+            }
             prevNode = prevNode.next;
         }
     }
