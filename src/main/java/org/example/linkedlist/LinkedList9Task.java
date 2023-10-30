@@ -17,9 +17,11 @@ public class LinkedList9Task {
     public void deleteNode(ListNode node) {
         int deleteVal = node.val;
         ListNode nextNode = node.next;
-        while (nextNode.next != null) {
-            nextNode.next.val = node.val;
+        ListNode prevNode = node;
+        while (nextNode != null) {
+            nextNode.val = prevNode.val;
             nextNode = nextNode.next;
+            prevNode = prevNode.next;
         }
     }
 }
