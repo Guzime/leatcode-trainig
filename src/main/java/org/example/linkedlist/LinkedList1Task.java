@@ -1,7 +1,7 @@
 package org.example.linkedlist;
 
 
-public class LinkedList9Task {
+public class LinkedList1Task {
 
     /**
      *There is a singly-linked list head and we want to delete a node node in it.

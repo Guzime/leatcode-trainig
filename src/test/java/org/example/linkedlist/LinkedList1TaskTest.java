@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class LinkedList9TaskTest {
+class LinkedList1TaskTest {
     @Test
     public void test1() {
         ListNode listNode = new ListNode(4, new ListNode(5, new ListNode(1, new ListNode(9))));
@@ -20,8 +20,8 @@ class LinkedList9TaskTest {
         node4.next = node5;
         node5.next = node1;
         node1.next = node9;
-        LinkedList9Task linkedList9Task = new LinkedList9Task();
-        linkedList9Task.deleteNode(node5);
+        LinkedList1Task linkedList1Task = new LinkedList1Task();
+        linkedList1Task.deleteNode(node5);
         assertEquals("4,1,9", node4.toString());
     }
 
