@@ -38,14 +38,13 @@ public class LinkedList3Task {
         ListNode start = head;
         ListNode end = null;
         while (start != end) {
-            int valStart = start.val;
             for (ListNode buff = start; ; buff = buff.next) {
                 if (buff.next == end ) {
                     if (buff == start) {
                         return head;
                     }
                     int buffVal = buff.val;
-                    buff.val = valStart;
+                    buff.val = start.val;
                     start.val = buffVal;
                     end = buff;
                     break;
