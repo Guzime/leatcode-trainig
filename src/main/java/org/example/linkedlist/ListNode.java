@@ -8,12 +8,14 @@ public class ListNode {
 
     @Override
     public String toString() {
+        int counter = 0;
         ListNode start = next;
         StringBuilder builder = new StringBuilder();
         builder.append(val).append(",");
-        while (start != null) {
+        while (start != null && counter < 20) {
             builder.append(start.val).append(",");
             start = start.next;
+            counter ++;
         }
         return builder.substring(0, builder.toString().length() - 1);
     }
