@@ -36,4 +36,16 @@ public class Array1Task {
         }
         return countUnique;
     }
+
+    //Взял с литкода
+    public int removeDuplicates2(int[] nums) {
+        int countUnique = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (i == 0 || nums[i - 1] != nums[i]) {
+                nums[countUnique] = nums[i];
+                countUnique++;
+            }
+        }
+        return countUnique;
+    }
 }

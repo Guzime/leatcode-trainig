@@ -10,7 +10,9 @@ class TreeNodeTest {
     public void test1() {
         TreeNode treeNode = new TreeNode(3,
                 new TreeNode(9, null, null),
-                new TreeNode(20, new TreeNode(15, null, null), new TreeNode(7, null ,null)));
+                new TreeNode(20,
+                        new TreeNode(15, null, null),
+                        new TreeNode(7, null ,null)));
 
         assertEquals("9,3,15,20,7", treeNode.toString());
     }

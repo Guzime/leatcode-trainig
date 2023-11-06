@@ -14,7 +14,7 @@ public class LinkedList1Task {
      *
      *
      */
-    public void deleteNode(ListNode node) {
+    public void deleteNode2(ListNode node) {
         ListNode nextNode = node.next;
         ListNode prevNode = node;
         while (nextNode != null) {
@@ -28,5 +28,11 @@ public class LinkedList1Task {
             }
             prevNode = prevNode.next;
         }
+    }
+
+    // leatcode как же все просто было)
+    public void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
     }
 }

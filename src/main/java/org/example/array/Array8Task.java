@@ -32,7 +32,7 @@ public class Array8Task {
      *
      * @param nums
      */
-    public void moveZeroes(int[] nums) {
+    public void moveZeroes3(int[] nums) {
         int countZero = 0;
         for (int i = nums.length - 1; i >= 0; i--) {
             if (nums[i] == 0) {
@@ -56,6 +56,20 @@ public class Array8Task {
         }
         for (int i = 0; i < nums.length; i++) {
             nums[i] = result[i];
+        }
+    }
+
+    //leatcode
+    public void moveZeroes(int[] nums) {
+        int snowBallSize = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 0) {
+                snowBallSize++;
+            } else if (snowBallSize > 0) {
+                int t = nums[i];
+                nums[i] = 0;
+                nums[i - snowBallSize] = t;
+            }
         }
     }
 }

@@ -69,4 +69,22 @@ public class Strings2Task {
         return result;
     }
 
+    public int reverse3(int x) {
+        long result = 0;
+        int digits = 1;
+        int start = 0;
+        String input = String.valueOf(x);
+        if (x < 0) {
+            start = 1;
+            digits = -1;
+        }
+        for (; start < input.length(); start++, digits *= 10) {
+            result += (long) (input.charAt(start) - '0') * digits;
+        }
+        if (result > Integer.MAX_VALUE || result < Integer.MIN_VALUE) {
+            return 0;
+        }
+        return (int)result;
+    }
+
 }

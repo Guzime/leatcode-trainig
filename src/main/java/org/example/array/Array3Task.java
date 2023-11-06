@@ -24,7 +24,7 @@ public class Array3Task {
      * @param nums
      * @param k
      */
-    public void rotate(int[] nums, int k) {
+    public void rotate1(int[] nums, int k) {
         if (nums.length > 1) {
             k = nums.length > k ? k : k % nums.length;
             int[] cutArray = new int[nums.length - k];
@@ -59,6 +59,24 @@ public class Array3Task {
                     j = nextIndex;
                 }
             }
+        }
+    }
+
+    // Взял с литкода 0 ms + 55.8
+    public void rotate(int[] nums, int k) {
+        k %= nums.length;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
+    }
+
+    public void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
         }
     }
 
