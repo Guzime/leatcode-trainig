@@ -55,4 +55,17 @@ public class LinkedList3Task {
         return head;
     }
 
+    // leatcode!
+    public ListNode reverseList3(ListNode head) {
+        ListNode prev = null;
+        ListNode newHead = head;
+        while (newHead != null) {
+            ListNode next = newHead.next;
+            newHead.next = prev;
+            prev = newHead;
+            newHead = next;
+        }
+        return prev;
+    }
+
 }
