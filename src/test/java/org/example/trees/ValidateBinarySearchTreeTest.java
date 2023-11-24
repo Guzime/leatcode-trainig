@@ -15,7 +15,7 @@ class ValidateBinarySearchTreeTest {
                     new TreeNode(20,
                             new TreeNode(15, null, null),
                             new TreeNode(27, null ,null)));
-        boolean validBST = validateBinarySearchTree.isValidBST(treeNode);
+        boolean validBST = validateBinarySearchTree.isValidBST1(treeNode);
         assertTrue(validBST);
     }
 
